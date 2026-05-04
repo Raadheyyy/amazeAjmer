@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(0.99 0.005 240);
+  --color-ink: oklch(0.21 0.03 260);
+  --color-accent: oklch(0.55 0.18 238);
+  --color-accent-soft: oklch(0.92 0.04 238);
+  --color-muted: oklch(0.95 0.01 240);
+  --color-border: oklch(0.88 0.02 240);
+  
+  --font-display: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  --letter-spacing-luxe: 0.3em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 300;
+  }
+}
+
+@layer utilities {
+  .tracking-luxe {
+    letter-spacing: var(--letter-spacing-luxe);
+  }
+  
+  .bg-accent-gradient {
+    background: linear-gradient(135deg, oklch(0.45 0.18 238), oklch(0.65 0.15 240), oklch(0.5 0.18 235));
+  }
+  
+  .text-accent-gradient {
+    background: linear-gradient(135deg, oklch(0.45 0.18 238), oklch(0.65 0.15 240), oklch(0.5 0.18 235));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
